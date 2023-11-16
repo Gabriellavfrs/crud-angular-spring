@@ -1,0 +1,37 @@
+<div class="table-container">
+  <mat-toolbar>Minhas Reservas</mat-toolbar>
+  <div class="loading-container" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <table mat-table [dataSource]="reservations" class="mat-elevation-z8" *ngIf="!loading">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Código da Reserva </th>
+    <td mat-cell *matCellDef="let reservation"> {{reservation.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="vehicleBrand">
+    <th mat-header-cell *matHeaderCellDef> Marca </th>
+    <td mat-cell *matCellDef="let reservation"> {{reservation.vehicleBrand}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="vehicleModel">
+    <th mat-header-cell *matHeaderCellDef> Modelo </th>
+    <td mat-cell *matCellDef="let reservation"> {{reservation.vehicleModel}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="beginning">
+    <th mat-header-cell *matHeaderCellDef> Início </th>
+    <td mat-cell *matCellDef="let reservation"> {{reservation.beginning}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="end">
+    <th mat-header-cell *matHeaderCellDef> Fim </th>
+    <td mat-cell *matCellDef="let reservation"> {{reservation.end}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+
