@@ -16,7 +16,7 @@ export class VehiclesComponent implements OnInit {
   vehicle: Vehicle = new Vehicle;
 
   displayedColumnsVehicles = ['id', 'vehicleModel', 'vehicleBrand', 'color', 'year', 'licensePlate', 'actions'];
-  
+
   ngOnInit(): void { 
     this.getAllVehicles();
    } 
@@ -36,17 +36,21 @@ export class VehiclesComponent implements OnInit {
   }
 
   insertVehicle(): void {
-    console.log(this.vehicle)
     this.vehicleService.insertVehicle(this.vehicle).subscribe({
       next: (resposta) => {
         alert("Veículo inserido com sucesso!");
         this.getAllVehicles();
+        this.clearInputs();
       },
       error: (erro) => {
-        alert("Erro ao consultar veículos");
+        alert("Erro ao salvar veículo");
         console.log(erro);
       }
     })
+  }
+
+  clearInputs(): void {
+    this.vehicle = new Vehicle;
   }
 
 }

@@ -18,6 +18,6 @@ export class VehiclesService {
   }
 
   insertVehicle(vehicle: Vehicle) {
-    return this.httpClient.post<Vehicle>(this.urlVehicles, vehicle);
+    return this.httpClient.post<Vehicle>(`${this.urlVehicles}/insert`, vehicle);
   }
 }

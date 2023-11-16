@@ -23,9 +23,17 @@ public class VehiclesService {
         List<VehicleDto> vehicleLDtoList = new ArrayList<>();
         for (VehiclesEntity vehicleEntity:vehicleEntityList) {
             VehicleDto vehicleDto = new VehicleDto();
-            vehicleDto.setId(vehicleEntity.getId());
+            vehicleDto.setId(vehicleEntity.getId().toString());
+            vehicleDto.setVehicleBrand(vehicleEntity.getVehicleBrand());
+            vehicleDto.setVehicleModel(vehicleEntity.getVehicleModel());
+            vehicleDto.setColor(vehicleEntity.getColor());
+            vehicleDto.setYear(vehicleEntity.getYear().toString());
+            vehicleDto.setLicensePlate(vehicleEntity.getLicensePlate());
+
+            vehicleLDtoList.add(vehicleDto);
         }
 
+        return vehicleLDtoList;
     }
     public List<VehicleDto> findAvailableVehicles(String beginning, String end) {
         List<VehicleDto> vehicleList = new ArrayList<>();
@@ -59,6 +67,10 @@ public class VehiclesService {
         }
 
         return vehicleList;
+    }
+
+    public void insertVehicle(VehiclesEntity vehicle) {
+        vehiclesRepository.save(vehicle);
     }
 
 }

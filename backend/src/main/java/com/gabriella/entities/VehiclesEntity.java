@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 @Setter
 @Entity(name = "vehicles")
 public class VehiclesEntity {
@@ -13,11 +12,11 @@ public class VehiclesEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
-    private String vehicle_brand;
+    @Column(name = "vehicle_brand")
+    private String vehicleBrand;
 
-    @Column
-    private String vehicle_model;
+    @Column(name = "vehicle_model")
+    private String vehicleModel;
 
     @Column
     private String color;
@@ -25,6 +24,30 @@ public class VehiclesEntity {
     @Column
     private Integer year;
 
-    @Column
-    private String license_plate;
+    @Column(name = "license_plate")
+    private String licensePlate;
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public String getVehicleBrand() {
+        return this.vehicleBrand;
+    }
+
+    public String getVehicleModel() {
+        return this.vehicleModel;
+    }
+
+    public String getColor() {
+        return this.color;
+    }
+
+    public Integer getYear() {
+        return this.year;
+    }
+
+    public String getLicensePlate() {
+        return this.licensePlate;
+    }
 }

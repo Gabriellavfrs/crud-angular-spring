@@ -1,32 +1,33 @@
-<form>
-  <table cellspacing="10"><tr>
-    <td><mat-form-field>
-      <mat-label>Marca</mat-label>
-      <input matInput name="vehicleBrand" [(ngModel)]="vehicle.vehicleBrand" >
-    </mat-form-field></td>
+<mat-card>
+  <mat-toolbar>Cadastrar Veículos</mat-toolbar>
+  <form>
+    <mat-form-field>
+        <mat-label>Marca</mat-label>
+        <input matInput name="vehicleBrand" [(ngModel)]="vehicle.vehicleBrand" >
+    </mat-form-field>
+  
+    <mat-form-field>
+        <mat-label>Modelo</mat-label>
+        <input matInput name="vehicleModel" [(ngModel)]="vehicle.vehicleModel">
+      </mat-form-field>
 
-    <td><mat-form-field>
-      <mat-label>Modelo</mat-label>
-      <input matInput name="vehicleModel" [(ngModel)]="vehicle.vehicleModel">
-    </mat-form-field></td>
-
-    <td><mat-form-field>
-      <mat-label>Cor</mat-label>
-      <input matInput name="color" [(ngModel)]="vehicle.color">
-    </mat-form-field></td>
-
-    <td><mat-form-field>
-      <mat-label>Ano de Fabricação</mat-label>
-      <input matInput name="year" [(ngModel)]="vehicle.year">
-    </mat-form-field></td>
-
-    <td><mat-form-field>
-      <mat-label>Placa</mat-label>
-      <input matInput name="licensePlate" [(ngModel)]="vehicle.licensePlate">
-    </mat-form-field></td>
-  </tr></table>
+      <mat-form-field>
+        <mat-label>Cor</mat-label>
+        <input matInput name="color" [(ngModel)]="vehicle.color">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Ano de Fabricação</mat-label>
+        <input matInput name="year" [(ngModel)]="vehicle.year">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Placa</mat-label>
+        <input matInput name="licensePlate" [(ngModel)]="vehicle.licensePlate">
+      </mat-form-field>
+  </form>
   <button mat-raised-button (click)="insertVehicle()">Adicionar Veículo</button>
-</form>
+</mat-card>
 
 <div class="table-container">
   <mat-toolbar>Veículos</mat-toolbar>
@@ -64,7 +65,7 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef>Opção</th>
     <td *matCellDef="let vehicles">
-      <button mat-raised-button>Reservar</button>
+      <button mat-raised-button class="del-btn">Excluir</button>
     </td>
   </ng-container>
  
