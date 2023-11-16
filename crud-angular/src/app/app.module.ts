@@ -9,6 +9,7 @@ import { ReservationsComponent } from './reservations/components/reservations.co
 import { AppMaterialModule } from './shared/app-material/app-material.module';
 import { VehiclesComponent } from './vehicles/componentes/vehicles.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

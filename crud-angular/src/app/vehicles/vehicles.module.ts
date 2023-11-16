@@ -11,7 +11,7 @@ import { AppMaterialModule } from '../shared/app-material/app-material.module';
   ],
   imports: [
     CommonModule,
-    AppMaterialModule
+    AppMaterialModule,
   ]
 })
 export class VehiclesModule { }

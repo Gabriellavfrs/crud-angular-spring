@@ -18,6 +18,7 @@ public class ReservationService {
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vehicles_rent", "root", "12345678");
             Statement statement = con.createStatement();
+
             ResultSet result = statement.executeQuery(query);
             while (result.next()) {
                 ReservationDto reservationDto = new ReservationDto();
@@ -28,8 +29,8 @@ public class ReservationService {
                 reservationDto.setEnd(result.getString("end"));
 
                 reservationList.add(reservationDto);
-
             }
+            con.close();
         } catch (SQLException exception) {
             System.out.println("Erro ao conectar ao Banco de Dados");
         }

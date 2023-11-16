@@ -1,5 +1,5 @@
 export interface IReservation {
-  id: number;
+  id: string;
   vehicleBrand: string;
   vehicleModel: string;
   beginning: string;

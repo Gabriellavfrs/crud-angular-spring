@@ -14,7 +14,7 @@ public class VehiclesEntity {
     private Integer id;
 
     @Column
-    private Integer vehicle_brand;
+    private String vehicle_brand;
 
     @Column
     private String vehicle_model;

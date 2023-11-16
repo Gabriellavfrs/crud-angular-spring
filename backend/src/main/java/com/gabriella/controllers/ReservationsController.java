@@ -18,7 +18,6 @@ public class ReservationsController {
     ReservationService reservationService;
     @GetMapping
     public List<ReservationDto> allReservations() {
-
         return reservationService.findAllReservations();
     }
 }
