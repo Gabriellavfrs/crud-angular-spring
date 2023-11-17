@@ -1,0 +1,42 @@
+.table-container {
+  margin: 20px;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(24, 55, 141);
+  color: white;
+}
+
+form {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  padding: 20px;
+}
+
+form > button {
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  margin: 20px;
+}
+
+.loading-container {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+.del-btn {
+  background-color: rgb(226, 54, 54);
+}
+
+.reservation-btn {
+  background-color: rgb(88, 243, 134);
+}
