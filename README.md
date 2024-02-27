@@ -12,4 +12,3 @@ O projeto foi desenvolvido utilizando Angular CLI versão 15.2.10 e java versão
 npm install
 npm start
   ```
-  
